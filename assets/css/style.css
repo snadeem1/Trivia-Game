@@ -1,5 +1,5 @@
 body{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Chivo', sans-serif;
     font-size: 25px;
     background-image: url('https://img.freepik.com/free-photo/brown-paper-texture-background_36078-19.jpg?size=338&ext=jpg');
     background-size: 100% 120%;
@@ -15,16 +15,25 @@ img{
 }
 
 h1{
-    text-align: center;
+	text-align: center;
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.question{
+	font-weight: bold;
 }
 
 .btn-primary,.reset{
 	background-color: #996633;
 	color: white;
-	font-family: 'Sigmar One', sans-serif;
+	font-family: 'Cinzel', serif;
+	font-weight: bold;
 	font-size: 30px;
 	padding: 20px;
 	margin-top: 100px;
+	border-color: black;
 }
 .btn-primary:hover, .reset:hover{
 	background-color: #d2a679;
@@ -36,9 +45,11 @@ h1{
 	height: 100%;
 	width: 700px;
 }
-
+h2{
+	font-weight: bold;
+}
 h2, #message, #finalMessage{
-	font-family: Sigmar One;
+	font-family: 'Jua', sans-serif;
 }
 
 .thisChoice:hover{

@@ -89,7 +89,7 @@ function newQuestion(){
 	$('#gif').empty();
 	answered = true;
 	
-	//sets up new questions & answerList
+	//new questions & answerList
 	$('#currentQuestion').html('Question #'+(currentQuestion+1)+'/'+triviaQuestions.length);
 	$('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
 	for(var i = 0; i < 4; i++){
@@ -149,10 +149,10 @@ function answerPage(){
 	}
 	
 	if(currentQuestion == (triviaQuestions.length-1)){
-		setTimeout(scoreboard, 2000)
+		setTimeout(scoreboard, 3000)
 	} else{
 		currentQuestion++;
-		setTimeout(newQuestion, 2000);
+		setTimeout(newQuestion, 3000);
 	}	
 }
 function scoreboard(){
