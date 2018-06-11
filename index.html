@@ -1,35 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>Trivia Game</title>
-  <link rel= "stylesheet" href="assets/css/reset.css">
-  <script src="https://code.jquery.com/jquery.js"></script>
-  <link rel= "stylesheet" href="assets/css/style.css">
-
+    <meta charset="UTF-8">
+    <title>Human Anatomy Trivia</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway|Sigmar+One" rel="stylesheet">
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
-<div class="box">
-  <div id="game">
-    <h1>Trivia Game</h1>
-    <p id="question">Question</p>
-
-    <div class="buttons">
-      <button id="btn0"><span id="choice0"></span> </button>
-      <button id="btn1"><span id="choice1"></span> </button>
-      <button id="btn2"><span id="choice2"></span> </button>
-      <button id="btn3"><span id="choice3"></span> </button>
+    <header>
+        <img src='https://kidsbiology.com/wp-content/themes/kids-biology/img/human-biology.jpg' alt='headerImg' width='100%'>
+    </header>
+    
+            
+    <div class='container'>
+            <h1 id="title">Human Anatomy Trivia</h1>
+        <button class='btn btn-primary' id='startBtn'>Start</button>
+        <!-- Question page -->
+        <div id=timeLeft></div>
+        <div id=currentQuestion></div>
+        <div class='question'></div>
+        <div class='answerList'></div>
+        <!-- Answer Page -->
+        <div id=message></div>
+        <div id=correctedAnswer></div>
+        <div id=gif></div>
+        <!-- Scoreboard -->
+        <div id=finalMessage></div>
+        <div id=correctAnswers></div>
+        <div id=incorrectAnswers></div>
+        <div id=unanswered></div>
+        <div id='startOverBtn'></div>
+    
     </div>
-  <div id="timesUp"></div>
-  
-  </div>
-</div>
-
-
-
-<script type="text/javascript" src="assets/javascript/app.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
+
 </html>

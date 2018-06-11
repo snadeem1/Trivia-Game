@@ -1,35 +1,127 @@
 $(document).ready(function() {
-var game = $("#game");
-var count = 30;
-var correctAnswers = 0;
-var incorrectAnswers = 0;
-var unAnswered = 0;
+   
+    var triviaQuestions = [{
+        question: "All Life begins with a single _____________",
+        answerList: ["tissue", "cell", "microbe", "organ"],
+        answer: 1
+    },{
+        question: "Skin, ears, and kidneys are examples of _____________",
+        answerList: ["cells", "organ systems", "organs", "tissues"],
+        answer: 2
+    },{
+        question: "One important function of bones is to produce  _____________",
+        answerList: ["blood cells", "tendons", "cartilage", "ligaments"],
+        answer: 0
+    },{
+        question: "Digestion begins in the   _____________",
+        answerList: ["large intestine", "small intestine", "mouth", "stomach"],
+        answer: 2
+    },{
+        question: "The human heart has _____________ chambers (rooms).",
+        answerList: ["Five", "Four", "Two", "Three"],
+        answer: 1
+    },{
+        question: "The main organ in the respiratory system is the _____________.",
+        answerList: ["Trachea", "Diaphragm", "Lung", "Bronchi"],
+        answer: 2
+    },{
+        question: " The central nervous system includes:",
+        answerList: ["Spinal Cord", "Brain & Spinal Cord", "Nerves", "Brain"],
+        answer: 1
+    },{
+        question: "What is the term which describes the joining together of a sperm and an egg?",
+        answerList: ["Fertilization", "Ovulation", "Reproduction", "Duplication"],
+        answer: 0
+    },{
+        question: "The primary function of the system is to support and protect the body",
+        answerList: ["Digestive", "Muscular", "Skeletal", "Respiratory"],
+        answer: 2
+    },{
+        question: "The primary function of this system is to break down food into usable form and to remove waste products",
+        answerList: ["Muscular", "Respiratory","Skeletal", "Digestive"],
+        answer: 3
+    }];
 
+var gifArray = ['question1', 'question2', 'question3', 'question4', 'question5', 'question6', 'question7', 'question8', 'question9', 'question10'];
 
+var currentQuestion; 
+var correctAnswer; 
+var incorrectAnswer;
+var unanswered;
+var seconds;
+var time; 
+var answered; 
+var userSelect;
 
+var messages = {
+	correct: "YAY! You got it right",
+	incorrect: "Ooops! That's wrong",
+	endTime: "Out of time!",
+	finished: "Time to see the Results"
+}
 
-var questions = ["Clouds are caused by what?", 
-                "In cricket what is an ODI?",
-                "In which year of First World War Germany declared war on Russia and France?"]
+$('#startBtn').on('click', function(){
+    $(this).hide();
+    $("#title").hide();
+	newGame();
+});
 
-var choices = [["Evaporation","Water vapour condensing","Melting ice crystals","Transpiration"],
-               ["Off Drive Initiative", "One Day Innings", "One Day International", "Over Delivered Illegally"]
-               ["1914","1915", "1916", "1917"]]
-                
-var answers = ["Water vapour condensing", "One Day International","1914"]
+$('#startOverBtn').on('click', function(){
+	$(this).hide();
+	newGame();
+});
+
+function newGame(){
+	$('#finalMessage').empty();
+	$('#correctAnswers').empty();
+	$('#incorrectAnswers').empty();
+	$('#unanswered').empty();
+	currentQuestion = 0;
+	correctAnswer = 0;
+	incorrectAnswer = 0;
+	unanswered = 0;
+	newQuestion();
+}
+function newQuestion(){
+	$('#message').empty();
+	$('#correctedAnswer').empty();
+	$('#gif').empty();
+	answered = true;
 	
-	
+	//sets up new questions & answerList
+	$('#currentQuestion').html('Question #'+(currentQuestion+1)+'/'+triviaQuestions.length);
+	$('.question').html('<h2>' + triviaQuestions[currentQuestion].question + '</h2>');
+	for(var i = 0; i < 4; i++){
+		var choices = $('<div>');
+		choices.text(triviaQuestions[currentQuestion].answerList[i]);
+		choices.attr({'data-index': i });
+		choices.addClass('thisChoice');
+		$('.answerList').append(choices);
+	}
+	countdown();
+	//clicking an answer will pause the time and setup answerPage
+	$('.thisChoice').on('click',function(){
+		userSelect = $(this).data('index');
+		clearInterval(time);
+		answerPage();
+	});
+}
+function countdown(){
+	seconds = 15;
+	$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+	answered = true;
+	//sets timer to go down
+	time = setInterval(showCountdown, 1000);
+}
 
-for ( var i = 0; i < questions.length; i++){
-    $("#question").html(questions[i]);
-    setInterval(function() {
-    $("#timesUp").html("Time Out")
-      }, 30000);
-      
-      }
-
-for ( var x = 0; x < choices.length; x++){
-
+function showCountdown(){
+	seconds--;
+	$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
+	if(seconds < 1){
+		clearInterval(time);
+		answered = false;
+		answerPage();
+	}
 }
 
 });
