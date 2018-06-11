@@ -17,27 +17,27 @@ $(document).ready(function() {
     
     
     var triviaQuestions = [{
-        question: "All Life begins with a single _____________",
+        question: "All Life begins with a single :",
         answerList: ["tissue", "cell", "microbe", "organ"],
         answer: 1
     },{
-        question: "Skin, ears, and kidneys are examples of _____________",
+        question: "Skin, ears, and kidneys are examples of :",
         answerList: ["cells", "organ systems", "organs", "tissues"],
         answer: 2
     },{
-        question: "One important function of bones is to produce  _____________",
+        question: "One important function of bones is to produce :",
         answerList: ["blood cells", "tendons", "cartilage", "ligaments"],
         answer: 0
     },{
-        question: "Digestion begins in the   _____________",
+        question: "Digestion begins in the :",
         answerList: ["large intestine", "small intestine", "mouth", "stomach"],
         answer: 2
     },{
-        question: "The human heart has _____________ chambers (rooms).",
+        question: "How many chambers does the human heart have?",
         answerList: ["Five", "Four", "Two", "Three"],
         answer: 1
     },{
-        question: "The main organ in the respiratory system is the _____________.",
+        question: "The main organ in the respiratory system is the :",
         answerList: ["Trachea", "Diaphragm", "Lung", "Bronchi"],
         answer: 2
     },{
