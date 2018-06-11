@@ -1,48 +1,50 @@
-.box{
-    width: 600px;
-    height: 500px;
-    margin: 0 auto;
-    padding: 10px 50px 50px 50px;
-    border-radius: 50px;
-    border: 2px solid #cbcbcb;
-    box-shadow: 10px 15px 5px #cbcbcb;
-    
+body{
+	background: url('../images/cloudBG.jpeg');
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
 }
 
-h1{
-    background-color: #57636e;
-    font-size: 60px;
-    text-align: center;
-    color: #fff;
-    padding: 2px 0px;
-    border-radius: 50px;
-    margin-top: 20px;
-
+header{
+	margin-bottom: 20px;
 }
 
-#question{
-    font-size: 30px;
-    margin-top: 30px;
+.btn-primary,.reset{
+	background-color: #313477;
+	color: white;
+	font-family: 'Sigmar One', sans-serif;
+	font-size: 30px;
+	padding: 20px;
+	margin-top: 100px;
 }
-.buttons{
-    margin-top: 30px;
-}
-
-#btn0, #btn1, #btn2, #btn3 {
-    background-color: bisque;
-    width: 250px;
-    height: 40px;
-    font-size: 20px;
-    border: 1px solid #1d3c6a;
-    border-radius: 50px;
-    margin: 10px;
+.btn-primary:hover, .reset:hover{
+	background-color: #202364;
 }
 
-#btn0:hover, #btn1:hover, #btn2:hover, #btn3:hover{
-    cursor: pointer;
-    background-color: pink;
+.container{
+	margin-top: 50px;
+	text-align: center;
+	height: 100%;
+	width: 700px;
 }
 
-#btn0:focus, #btn1:focus, #btn2:focus, #btn3:focus{
-    outline: 0;
+h2, #message, #finalMessage{
+	font-family: Sigmar One;
+}
+
+.thisChoice:hover{
+	background-color: #202364;
+	color: white;
+	padding: 10px;
+}
+
+#gif{
+	margin: 30px;
+}
+
+@media screen and (max-width:640px){
+	.container{
+		width: 500px;
+		margin-top: 200px;
+		size: 200%;
+	}	
 }
