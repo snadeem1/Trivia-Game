@@ -1,8 +1,9 @@
 body{
 	font-family: 'Raleway', sans-serif;
     font-size: 25px;
-    background-image: url('https://newyousleeve.com/wp-content/uploads/2016/02/Organ-Failure.png');
-    
+    background-image: url('https://img.freepik.com/free-photo/brown-paper-texture-background_36078-19.jpg?size=338&ext=jpg');
+    background-size: 100% 120%;
+    background-repeat: no-repeat;
 }
 
 
@@ -15,11 +16,6 @@ img{
 
 h1{
     text-align: center;
-    background-color: white;
-    width: 450px;
-    height: 60px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .btn-primary,.reset{
