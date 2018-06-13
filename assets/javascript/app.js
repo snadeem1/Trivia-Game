@@ -108,7 +108,7 @@ function newQuestion(){
 	});
 }
 function countdown(){
-	seconds = 15;
+	seconds = 30;
 	$('#timeLeft').html('<h3>Time Remaining: ' + seconds + '</h3>');
 	answered = true;
 	//sets timer to go down
@@ -149,10 +149,10 @@ function answerPage(){
 	}
 	
 	if(currentQuestion == (triviaQuestions.length-1)){
-		setTimeout(scoreboard, 3000)
+		setTimeout(scoreboard, 4000)
 	} else{
 		currentQuestion++;
-		setTimeout(newQuestion, 3000);
+		setTimeout(newQuestion, 4000);
 	}	
 }
 function scoreboard(){
